@@ -25,7 +25,7 @@
  * The class simply looks for test configuration file given using "--from"
  * paramter to the test case and loads it into a yarp::os::Property object.
  * If any environment property is given using "testrunner -e" or using
- * <environment></environment> tag within suit XML file, that will be used to
+ * <environment></environment> tag within suite XML file, that will be used to
  * updated the properties from the main config file.
  * Please see the example folder for how to develope a simple test plugin for iCub/Yarp.
  */

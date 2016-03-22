@@ -11,7 +11,7 @@
 #include <rtf/TestCase.h>
 #include <rtf/TestResult.h>
 #include <rtf/TestRunner.h>
-#include <rtf/TestSuit.h>
+#include <rtf/TestSuite.h>
 #include <rtf/ConsoleListener.h>
 #include <rtf/TestAssert.h>
 #include <rtf/TestResultCollector.h>
@@ -54,16 +54,16 @@ int main(int argc, char** argv)
     result.addListener(&collector);
 
 
-    // create a test suit and the test cases
-    TestSuit suit("MyTestSuit");
+    // create a test suite and the test cases
+    TestSuite suite("MyTestSuite");
     MyTest1 test1;
     MyTest2 test2;
-    suit.addTest(&test1);
-    suit.addTest(&test2);
+    suite.addTest(&test1);
+    suite.addTest(&test2);
 
     // create a test runner
     TestRunner runner;
-    runner.addTest(&suit);
+    runner.addTest(&suite);
     runner.run(result);
 
     // print out some simple statistics

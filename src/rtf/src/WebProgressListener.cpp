@@ -305,7 +305,7 @@ void WebProgressListenerImpl::endTest(const RTF::Test* test) {
     critical.unlock();
 }
 
-void WebProgressListenerImpl::startTestSuit(const RTF::Test* test) {
+void WebProgressListenerImpl::startTestSuite(const RTF::Test* test) {
     string text = Asserter::format("<br> %s Test suite %s started... %s",
                                   BLUE,
                                   encode(test->getName()).c_str(),
@@ -316,7 +316,7 @@ void WebProgressListenerImpl::startTestSuit(const RTF::Test* test) {
     critical.unlock();
 }
 
-void WebProgressListenerImpl::endTestSuit(const RTF::Test* test) {
+void WebProgressListenerImpl::endTestSuite(const RTF::Test* test) {
     string text = Asserter::format("<br> %s Test suite %s %s %s",
                                   BLUE,
                                   encode(test->getName()).c_str(),
@@ -379,12 +379,12 @@ void WebProgressListener::endTest(const RTF::Test* test) {
     ((WebProgressListener*)implement)->endTest(test);
 }
 
-void WebProgressListener::startTestSuit(const RTF::Test* test) {
-    ((WebProgressListener*)implement)->startTestSuit(test);
+void WebProgressListener::startTestSuite(const RTF::Test* test) {
+    ((WebProgressListener*)implement)->startTestSuite(test);
 }
 
-void WebProgressListener::endTestSuit(const RTF::Test* test) {
-    ((WebProgressListener*)implement)->endTestSuit(test);
+void WebProgressListener::endTestSuite(const RTF::Test* test) {
+    ((WebProgressListener*)implement)->endTestSuite(test);
 }
 
 void WebProgressListener::startTestRunner() {

@@ -54,11 +54,11 @@ bool TextOutputter::write(std::string filename,
        ResultEvent* e = *itr;
 
        // start suit
-       if(dynamic_cast<ResultEventStartSuit*>(e))
-           outputter<<"Test suit "<<e->getTest()->getName()<<" started..."<<endl;
+       if(dynamic_cast<ResultEventStartSuite*>(e))
+           outputter<<"Test suite "<<e->getTest()->getName()<<" started..."<<endl;
        // end suit
-       else if(dynamic_cast<ResultEventEndSuit*>(e)) {
-           outputter<<"Test suit "<<e->getTest()->getName();
+       else if(dynamic_cast<ResultEventEndSuite*>(e)) {
+           outputter<<"Test suite "<<e->getTest()->getName();
            if(e->getTest()->succeeded())
                outputter<<" passed!"<<endl;
            else

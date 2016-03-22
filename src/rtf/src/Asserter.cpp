@@ -54,7 +54,7 @@ void Asserter::report(RTF::TestMessage msg,
 }
 
 void Asserter::report(RTF::TestMessage msg,
-                      RTF::TestSuit* testsuit)
+                      RTF::TestSuite* testsuit)
 {
     testsuit->getResult()->addReport(testsuit, msg);
 }

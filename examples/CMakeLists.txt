@@ -20,10 +20,10 @@ if (BUILD_EXAMPLES)
             EXPORT  rtf_simple
             RUNTIME DESTINATION bin)
 
-    add_executable(rtf_simple_suit simple_suit.cpp)
-    target_link_libraries(rtf_simple_suit RTF)
-    install(TARGETS rtf_simple_suit
-            EXPORT  rtf_simple_suit
+    add_executable(rtf_simple_suite simple_suite.cpp)
+    target_link_libraries(rtf_simple_suite RTF)
+    install(TARGETS rtf_simple_suite
+            EXPORT  rtf_simple_suite
             RUNTIME DESTINATION bin)
 
     add_executable(rtf_simple_collector simple_collector.cpp)
