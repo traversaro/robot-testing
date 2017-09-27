@@ -26,12 +26,16 @@ TestSuit::~TestSuit() {
 }
 
 void TestSuit::addTest(RTF::Test* test) {
-    tests.insert(test);
+    tests.push_back(test);
 }
 
 
 void TestSuit::removeTest(RTF::Test* test) {
-    tests.erase(test);
+    for (int i = 0; i < tests.size(); i++)
+    {
+        if(tests[i] == test) tests.erase(tests.begin()+i);
+    }
+    
 }
 
 void TestSuit::reset() {
@@ -166,7 +170,7 @@ void TestSuit::run(TestResult &rsl) {
 
 void TestSuit::addFixtureManager(RTF::FixtureManager* manager) {
     manager->setDispatcher(this);
-    fixtureManagers.insert(manager);
+    fixtureManagers.push_back(manager);
 }
 
 void TestSuit::fixtureCollapsed(RTF::TestMessage reason) {
